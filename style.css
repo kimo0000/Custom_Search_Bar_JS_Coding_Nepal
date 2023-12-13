@@ -1,0 +1,75 @@
+*,
+::after,
+::before {
+  padding: 0;
+  margin: 0;
+  border: none;
+  outline: none;
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  background: radial-gradient(#4565 25%, #f50 100%);
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
+.wrapper {
+  width: 50%;
+  max-width: 250px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.inp {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  position: relative;
+}
+.inp input {
+  width: 32px;
+  padding: 10px;
+  border-radius: 5px;
+  transition: 0.5s;
+}
+.wrapper.show input {
+  width: 100%;
+  padding: 10px 35px;
+}
+.inp i {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 6px;
+  font-size: 20px;
+  color: blueviolet;
+  cursor: pointer;
+}
+.wrapper .close {
+  font-size: 20px;
+  color: blueviolet;
+  cursor: pointer;
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.3s;
+}
+.wrapper.show .close {
+  opacity: 1;
+  pointer-events: auto;
+}
+.close:active {
+  animation: closeBtn 3s forwards;
+  transition: 1s;
+}
+@keyframes closeBtn {
+  0% {
+    transform: rotate(-30deg);
+  }
+  100% {
+    transform: rotate(20deg);
+  }
+}
